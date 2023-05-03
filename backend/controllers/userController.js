@@ -1,4 +1,4 @@
-import asyncHandler from "../middleware/asyncHandler.js";
+import asyncHandler from "../middlewares/asyncHandler.js";
 import generateToken from "../utils/generateToken.js";
 import User from "../models/userModel.js";
 
@@ -70,10 +70,13 @@ const logoutUser = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
+// TODO: RESOLVE
+
 // @desc    Get user profile
 // @route   GET /api/users/profile
 // @access  Private
 const getUserProfile = asyncHandler(async (req, res) => {
+  console.log("REQUEST USER ===> ", req.user);
   const user = await User.findById(req.user._id);
 
   if (user) {
@@ -88,6 +91,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 });
+
+// TODO: RESOLVE
 
 // @desc    Update user profile
 // @route   PUT /api/users/profile

@@ -5,7 +5,6 @@
 Add a `.env` file to root and add the following
 
 ```
-NODE_ENV = development
 PORT = 8585
 MONGO_URI = your mongodb uri
 JWT_SECRET = 'abc123'
