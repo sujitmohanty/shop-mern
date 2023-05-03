@@ -4,6 +4,7 @@ import Product from "../components/Product";
 import { useGetProductsQuery } from "../slices/productsApiSlice.js";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const { data: products, isLoading, error } = useGetProductsQuery();
@@ -18,6 +19,7 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
+          <Meta />
           <h1>Latest Products</h1>
           <Row>
             {products.map((product) => (
