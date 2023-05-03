@@ -8,6 +8,7 @@ Add a `.env` file to root and add the following
 PORT = 8585
 MONGO_URI = your mongodb uri
 JWT_SECRET = 'abc123'
+NODE_ENV = 'development'
 ```
 
 Change the JWT_SECRET and PAGINATION_LIMIT to what you want

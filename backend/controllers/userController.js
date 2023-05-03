@@ -70,8 +70,6 @@ const logoutUser = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
-// TODO: RESOLVE
-
 // @desc    Get user profile
 // @route   GET /api/users/profile
 // @access  Private
@@ -91,8 +89,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 });
-
-// TODO: RESOLVE
 
 // @desc    Update user profile
 // @route   PUT /api/users/profile
