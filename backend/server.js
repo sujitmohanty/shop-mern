@@ -8,11 +8,10 @@ import connectDB from "./config/db.js";
 // import products from "./data/products.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
+import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
 
 dotenv.config();
-
-import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
-import uploadRoutes from "./routes/uploadRoutes.js";
 
 const port = process.env.PORT || 8585;
 
@@ -27,6 +26,7 @@ app.use(cookieParser());
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/upload", uploadRoutes);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
