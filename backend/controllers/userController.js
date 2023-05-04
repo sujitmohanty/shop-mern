@@ -74,7 +74,6 @@ const logoutUser = (req, res) => {
 // @route   GET /api/users/profile
 // @access  Private
 const getUserProfile = asyncHandler(async (req, res) => {
-  console.log("REQUEST USER ===> ", req.user);
   const user = await User.findById(req.user._id);
 
   if (user) {
