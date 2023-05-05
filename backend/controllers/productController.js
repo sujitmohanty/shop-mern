@@ -25,18 +25,36 @@ const getProductById = asyncHandler(async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
-  const product = new Product({
-    name: "Sample name",
-    price: 0,
+  const {
+    name,
+    price,
+    user,
+    image,
+    brand,
+    category,
+    countInStock,
+    description,
+  } = req.body;
+
+  if (!name || !price || !countInStock || !brand || !category) {
+    res.status(400);
+    throw new Error(
+      "Ensure you have entered a name, price, brand, category & stock quantity for the product"
+    );
+  }
+
+  const createdProduct = await Product.create({
+    name,
+    price,
     user: req.user._id,
-    image: "/images/sample.jpg",
-    brand: "Sample brand",
-    category: "Sample category",
-    countInStock: 0,
-    description: "Sample description",
+    image,
+    brand,
+    category,
+    countInStock,
+    description,
   });
 
-  const createdProduct = await product.save();
+  // const createdProduct = await product.save();
   res.status(201).json(createdProduct);
 });
 
