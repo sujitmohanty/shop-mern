@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
@@ -11,8 +11,6 @@ import {
 } from "../../slices/productsApiSlice";
 
 const ProductCreateScreen = () => {
-  const { id: productId } = useParams();
-
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
@@ -33,9 +31,19 @@ const ProductCreateScreen = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    console.log(
+      "VALUES =>",
+      name,
+      price,
+      image,
+      brand,
+      category,
+      description,
+      countInStock
+    );
     try {
       await createProduct({
-        productId,
         name,
         price,
         image,
