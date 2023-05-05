@@ -32,16 +32,6 @@ const ProductCreateScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    console.log(
-      "VALUES =>",
-      name,
-      price,
-      image,
-      brand,
-      category,
-      description,
-      countInStock
-    );
     try {
       await createProduct({
         name,
