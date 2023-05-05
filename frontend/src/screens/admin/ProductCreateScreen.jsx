@@ -21,6 +21,8 @@ const ProductCreateScreen = () => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
 
+  const { isLoading, error, refetch } = useCreateProductMutation();
+
   const [createProduct, { isLoading: loadingCreate }] =
     useCreateProductMutation();
 
