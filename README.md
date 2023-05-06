@@ -32,6 +32,21 @@ npm run dev
 npm run server
 ```
 
+### Admin User
+
+```
+sujit@email.com
+123456
+
+```
+
+### Non-Admin User
+
+```
+john.doe@email.com
+123456
+```
+
 ### Screenshots
 
 <img src="https://i.ibb.co/jZLrHcc/Screenshot-2023-05-05-at-2-11-26-PM.png" alt="Screenshot-2023-05-05-at-2-11-26-PM" border="0">
