@@ -19,7 +19,7 @@ const ProductCreateScreen = () => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
 
-  const { isLoading, error, refetch } = useCreateProductMutation();
+  const { isLoading, error } = useCreateProductMutation();
 
   const [createProduct, { isLoading: loadingCreate }] =
     useCreateProductMutation();
@@ -43,7 +43,6 @@ const ProductCreateScreen = () => {
         countInStock,
       });
       toast.success("Product created");
-      refetch();
       navigate("/admin/productlist");
     } catch (err) {
       toast.error(err?.data?.message || err.error);
